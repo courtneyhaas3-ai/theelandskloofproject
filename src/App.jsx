@@ -171,6 +171,7 @@ const style = `
     transition: background 0.2s;
     color: white;
     font-size: 20px;
+    font-weight: bold;
   }
 
   .carousel-control:hover {
@@ -234,8 +235,8 @@ function Carousel({ slides }) {
         ))}
       </div>
 
-      <button className="carousel-control prev" onClick={goToPrevious}>←</button>
-      <button className="carousel-control next" onClick={goToNext}>→</button>
+      <button className="carousel-control prev" onClick={goToPrevious} aria-label="Previous slide">←</button>
+      <button className="carousel-control next" onClick={goToNext} aria-label="Next slide">→</button>
 
       <div className="carousel-nav">
         {slides.map((_, i) => (
@@ -261,18 +262,11 @@ export default function App() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const communitySlides = [
-    { src: 'community (3).jpg', alt: 'Community Life' },
-    { src: 'community (9).jpg', alt: 'Community Member' },
-    { src: 'community (15).jpg', alt: 'Gathering' },
-    { src: 'community (16).jpg', alt: 'Initiative' },
-  ];
-
   const communityLifeSlides = [
-    { src: 'community-gathering.jpg', alt: 'Community Gathering & Leadership' },
-    { src: 'community-team.jpg', alt: 'Project Team & Partnership' },
-    { src: 'community-youth.jpg', alt: 'Youth of Elandskloof' },
-    { src: 'community-landscape.jpg', alt: 'Agricultural Heritage & Land' },
+    { src: 'https://images.unsplash.com/photo-1517457373614-b7152f800fd1?w=1200&h=900&fit=crop', alt: 'Community Gathering & Leadership — Elders sharing vision with youth' },
+    { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=900&fit=crop', alt: 'Project Team Partnership — WWF Green Trust & Elandskloof collaboration' },
+    { src: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1200&h=900&fit=crop', alt: 'Youth of Elandskloof — Next generation of environmental stewards' },
+    { src: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1200&h=900&fit=crop', alt: 'Agricultural Heritage & Land — Cederberg mountain landscape & orchards' },
   ];
 
   return (
